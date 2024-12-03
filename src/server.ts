@@ -30,6 +30,12 @@ const limiter = rateLimit({
 
 app.use("/api/ask", limiter);
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "app deployed successfully",
+  });
+});
+
 app.post("/api/ask", async (req, res: Response) => {
   const { question } = (req as CustomRequest).body;
   const userAgent = (req as CustomRequest).useragent;
