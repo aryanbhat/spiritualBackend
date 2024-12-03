@@ -9,7 +9,7 @@ interface CustomRequest extends Request {
   useragent: useragent.Details;
 }
 
-const app: Express = express();
+export const app: Express = express();
 app.use(cors());
 app.use(express.json());
 app.use(useragent.express());
